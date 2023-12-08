@@ -1,3 +1,4 @@
+import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -47,7 +48,7 @@ public class LoginPage implements ActionListener{
 		loginButton.setFocusable(false); // Esthetics - this stops a square from appearing around the button text - not needed
 		resetButton.setBounds(225, 200, 100, 25);
 		resetButton.addActionListener(this); 
-		resetButton.setFocusable(true); // Esthetics - this stops a square from appearing around the button text - not needed
+		resetButton.setFocusable(false); // Esthetics - this stops a square from appearing around the button text - not needed
 		
 		// create frame - add components of labels, textfields & buttons to frame
 		frame.add(userIDLabel);
@@ -70,7 +71,31 @@ public class LoginPage implements ActionListener{
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
+	
+		// if reset button is clicked - clear the text of user and password fields
+		if(e.getSource() == resetButton) {
+			
+			userIDField.setText("");
+			userPasswordField.setText("");
+		}
 		
+		
+		if(e.getSource() == loginButton) {
+			
+			String userID = userIDField.getText();
+			String password = String.valueOf(userPasswordField.getPassword()); // need to do this when using JPasswordfield - converts password to string
+		
+			//check logininfo HashMap
+			if(logininfo.containsKey(userID)) {
+				if(logininfo.get(userID).equals(password)) {
+					messageLabel.setForeground(Color.green);
+					messageLabel.setText("Login successful");
+					WelcomePage welcomePage = new WelcomePage();
+					
+					
+				}
+			}
 	}
 }
+	
+}// end class
