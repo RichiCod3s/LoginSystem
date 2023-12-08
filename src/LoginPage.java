@@ -93,7 +93,13 @@ public class LoginPage implements ActionListener{
 					WelcomePage welcomePage = new WelcomePage();
 					
 					
+				}else { // if does not equal password
+					messageLabel.setForeground(Color.red);
+					messageLabel.setText("Wrong Password");
 				}
+			}else { // if does not contain user ID
+				messageLabel.setForeground(Color.red);
+				messageLabel.setText("Username not found");
 			}
 	}
 }
