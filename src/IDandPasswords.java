@@ -1,5 +1,5 @@
 import java.util.HashMap;
-
+// class is used to store HashMap of User ID and Passwords
 public class IDandPasswords {
 
 	HashMap<String, String> logininfo = new HashMap<String, String>();

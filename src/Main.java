@@ -1,4 +1,4 @@
-
+// calls main
 public class Main {
 
 	public static void main(String[] args) {
@@ -7,7 +7,7 @@ public class Main {
 	
 
 	
-	LoginPage loginPage = new LoginPage(idandPasswords.getLoginInfo());
+	LoginPage loginPage = new LoginPage(idandPasswords.getLoginInfo()); // passing in HashMap to loginPage
 	
 	
 	

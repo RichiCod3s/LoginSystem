@@ -26,7 +26,7 @@ public class LoginPage implements ActionListener{
 	HashMap<String, String> logininfo = new HashMap<String,String>(); 
 	
 	//constructor
-	LoginPage(HashMap<String,String> loginInfoOriginal){
+	LoginPage(HashMap<String,String> loginInfoOriginal){ // passing in HashMap data
 	
 		logininfo = loginInfoOriginal;
 		
@@ -91,7 +91,7 @@ public class LoginPage implements ActionListener{
 					messageLabel.setForeground(Color.green);
 					messageLabel.setText("Login successful");
 					frame.dispose(); // gets rid of frame upon successful entry
-					WelcomePage welcomePage = new WelcomePage(); // calls welcome page
+					WelcomePage welcomePage = new WelcomePage(userID); // calls welcome page
 					
 					
 				}else { // if does not equal password
